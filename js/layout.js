@@ -5,6 +5,10 @@ function key(code, label, span = 4) {
     return { code: code, label: label, span: span};
 }
 
+function gap(span) {
+    return { code: null, label:"", span: span};
+}
+
 //Keyboard Layout (array of arrays)
 //Using 
 
@@ -12,16 +16,17 @@ export const layout = [
     // Row 0 Array
     [
         key("Escape", "Esc"),
-        // Gap span 8
+        gap(2),
         key("F1", "F1"),
         key("F2", "F2"),
         key("F3", "F3"),
         key("F4", "F4"),
+        gap(2),
         key("F5", "F5"),
         key("F6", "F6"),
         key("F7", "F7"),
         key("F8", "F8"),
-        // Smaller Gap span 4
+        gap(1),
         key("F9", "F9"),
         key("F10", "F10"),
         key("F11", "F11"),
@@ -42,14 +47,14 @@ export const layout = [
         key("Digit9", "9"), // ()
         key("Digit0", "0"), // )
         key("Minus", "-"), // _
-        key("Equals", "="), // +
-        key("Backspace", "BACKSPACE"),
+        key("Equal", "="), // +
+        key("Backspace", "BACKSPACE", 8),
 
         key("Delete", "DEL"),
     ],
     // Row 2 Array
     [
-        key("Tab", "TAB"),
+        key("Tab", "TAB", 6),
         key("KeyQ", "Q"),
         key("KeyW", "W"),
         key("KeyE", "E"),
@@ -60,15 +65,15 @@ export const layout = [
         key("KeyI", "I"),
         key("KeyO", "O"),
         key("KeyP", "P"),
-        key("LeftBracket", "["), // {}
-        key("RightBracket", "]"), // }
-        key("Backslash", "\\"), // |
+        key("BracketLeft", "["), // {}
+        key("BracketRight", "]"), // }
+        key("Backslash", "\\", 6), // |
 
         key("End", "END"),
     ],
     // Row 3 Array
     [
-        key("Caps", "CAPSLOCK"),
+        key("CapsLock", "CAPSLOCK", 7),
         key("KeyA", "A"),
         key("KeyS", "S"),
         key("KeyD", "D"),
@@ -79,14 +84,14 @@ export const layout = [
         key("KeyK", "K"),
         key("KeyL", "L"),
         key("Semicolon", ";"), // :
-        key("Apostrophe", "'"), // "
-        key("Enter", "ENTER"),
+        key("Quote", "'"), // "
+        key("Enter", "ENTER", 9),
 
         key("PageUp", "PGUP"),
     ],
     // Row 4 Array
     [
-        key("Shift", "SHIFT"),
+        key("ShiftLeft", "SHIFT", 9),
         key("KeyZ", "Z"),
         key("KeyX", "X"),
         key("KeyC", "C"),
@@ -94,22 +99,22 @@ export const layout = [
         key("KeyB", "B"),
         key("KeyN", "N"),
         key("KeyM", "M"),
-        key("LessThan", "<"),
-        key("GreaterThan", ">"),
+        key("Comma", ","), // <
+        key("Period", "."), // >
         key("Slash", "/"), // ?
-        key("Shift", "SHIFT"),
+        key("ShiftRight", "SHIFT", 7),
         //up arrow key, kind of different
         key("PageDown", "PGDN"),
     ],
     // Row 5 Array
     [
-        key("Control", "CTRL"),
-        key("Windows", "WIN"), // or like windows symbol
-        key("Alt", "ALT"),
-        key("Spacebar", ""),
-        key("Alt", "ALT"),
+        key("ControlLeft", "CTRL", 5),
+        key("Windows", "WIN", 5), // or like windows symbol
+        key("AltLeft", "ALT", 5),
+        key("Space", "", 25),
+        key("AltRight", "ALT"),
         key("Function", "FN"),
-        key("Control", "CTRL"),
+        key("ControlRight", "CTRL"),
         // arrow keys
     ]
 ];
