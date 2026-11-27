@@ -1,5 +1,5 @@
-function key(code, label, span = 4) {
-    return { code: code, label: label, span: span};
+function key(code, label, span = 4, accent = false) {
+    return { code: code, label: label, span: span, accent: accent};
 }
 
 function gap(span) {
@@ -9,9 +9,9 @@ function gap(span) {
 //Keyboard Layout (array (keyboard) of arrays (rows) with keys)
 
 export const layout = [
-    // Row 0 Array
+    // Row 1
     [
-        key("Escape", "Esc"),
+        key("Escape", "Esc", 4, true),
         gap(2),
         key("F1", "F1"),
         key("F2", "F2"),
@@ -29,7 +29,7 @@ export const layout = [
         key("F12", "F12"),
         gap(8),
     ],
-    // Row 1 Array
+    // Row 2
     [
         key("Backquote", "`"),
         //I'll fix the number & symbol keys later
@@ -45,13 +45,13 @@ export const layout = [
         key("Digit0", "0"), // )
         key("Minus", "-"), // _
         key("Equal", "="), // +
-        key("Backspace", "BACKSPACE", 8),
+        key("Backspace", "Backspace", 8),
 
-        key("Delete", "DEL"),
+        key("Delete", "Del"),
     ],
-    // Row 2 Array
+    // Row 3
     [
-        key("Tab", "TAB", 6),
+        key("Tab", "Tab", 6),
         key("KeyQ", "Q"),
         key("KeyW", "W"),
         key("KeyE", "E"),
@@ -66,11 +66,11 @@ export const layout = [
         key("BracketRight", "]"), // }
         key("Backslash", "\\", 6), // |
 
-        key("End", "END"),
+        key("End", "End"),
     ],
-    // Row 3 Array
+    // Row 4
     [
-        key("CapsLock", "CAPSLOCK", 7),
+        key("CapsLock", "Caps Lock", 7),
         key("KeyA", "A"),
         key("KeyS", "S"),
         key("KeyD", "D"),
@@ -82,13 +82,13 @@ export const layout = [
         key("KeyL", "L"),
         key("Semicolon", ";"), // :
         key("Quote", "'"), // "
-        key("Enter", "ENTER", 9),
+        key("Enter", "Enter", 9, true),
 
-        key("PageUp", "PGUP"),
+        key("PageUp", "PgUp"),
     ],
-    // Row 4 Array
+    // Row 5
     [
-        key("ShiftLeft", "SHIFT", 9),
+        key("ShiftLeft", "Shift", 9),
         key("KeyZ", "Z"),
         key("KeyX", "X"),
         key("KeyC", "C"),
@@ -99,21 +99,21 @@ export const layout = [
         key("Comma", ","), // <
         key("Period", "."), // >
         key("Slash", "/"), // ?
-        key("ShiftRight", "SHIFT", 7),
-        key("ArrowUp", "▲"),
-        key("PageDown", "PGDN"),
+        key("ShiftRight", "Shift", 7),
+        key("ArrowUp", "🠉"),
+        key("PageDown", "PgDn"),
     ],
-    // Row 5 Array
+    // Row 6
     [
-        key("ControlLeft", "CTRL", 5),
-        key("MetaLeft", "WIN", 5), // or like windows symbol
-        key("AltLeft", "ALT", 5),
-        key("Space", "", 25),
-        key("AltRight", "ALT"),
-        key("Function", "FN"),
-        key("ControlRight", "CTRL"),
-        key("ArrowLeft", "◀"),
-        key("ArrowDown", "▼"),
-        key("ArrowRight", "▶"),
+        key("ControlLeft", "Ctrl", 5),
+        key("MetaLeft", "Win", 5), // or like windows symbol
+        key("AltLeft", "Alt", 5),
+        key("Space", "", 25, true),
+        key("AltRight", "Alt"),
+        key("Function", "Fn"),
+        key("ControlRight", "Ctrl"),
+        key("ArrowLeft", "🠈", 4, true),
+        key("ArrowDown", "🠋", 4, true),
+        key("ArrowRight", "🠊", 4, true),
     ]
 ];
