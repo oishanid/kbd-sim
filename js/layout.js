@@ -1,6 +1,3 @@
-// Function to make a keyboard key. (code, label, span) are like the fields for each key
-// Code is a key's "name/code", label is what actually shows on the screen, span is size
-// Span is 4 by default
 function key(code, label, span = 4) {
     return { code: code, label: label, span: span};
 }
@@ -9,8 +6,7 @@ function gap(span) {
     return { code: null, label:"", span: span};
 }
 
-//Keyboard Layout (array of arrays)
-//Using 
+//Keyboard Layout (array (keyboard) of arrays (rows) with keys)
 
 export const layout = [
     // Row 0 Array
@@ -31,6 +27,7 @@ export const layout = [
         key("F10", "F10"),
         key("F11", "F11"),
         key("F12", "F12"),
+        gap(8),
     ],
     // Row 1 Array
     [
@@ -103,18 +100,20 @@ export const layout = [
         key("Period", "."), // >
         key("Slash", "/"), // ?
         key("ShiftRight", "SHIFT", 7),
-        //up arrow key, kind of different
+        key("ArrowUp", "▲"),
         key("PageDown", "PGDN"),
     ],
     // Row 5 Array
     [
         key("ControlLeft", "CTRL", 5),
-        key("Windows", "WIN", 5), // or like windows symbol
+        key("MetaLeft", "WIN", 5), // or like windows symbol
         key("AltLeft", "ALT", 5),
         key("Space", "", 25),
         key("AltRight", "ALT"),
         key("Function", "FN"),
         key("ControlRight", "CTRL"),
-        // arrow keys
+        key("ArrowLeft", "◀"),
+        key("ArrowDown", "▼"),
+        key("ArrowRight", "▶"),
     ]
 ];
