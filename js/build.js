@@ -26,6 +26,10 @@ export function buildKeyboard(layout, container) {
             keycapDiv.classList.add("keycap");
             keycapDiv.textContent = keyData.label; // set the text shown as the label of the key
 
+            if (keyData.mod) {
+                keycapDiv.classList.add("modkey");
+            }
+
             keyDiv.append(keycapDiv);
             rowDiv.append(keyDiv);
         }

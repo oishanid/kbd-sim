@@ -1,12 +1,12 @@
-function key(code, label, span = 4, accent = false) {
-    return { code: code, label: label, span: span, accent: accent};
+function key(code, label, span = 4, mod = false) {
+    return { code: code, label: label, span: span, mod: mod};
 }
 
 function gap(span) {
     return { code: null, label:"", span: span};
 }
 
-//Keyboard Layout (array (keyboard) of arrays (rows) with keys)
+// Keyboard Layout (array (keyboard) of arrays (rows) with keys)
 
 export const layout = [
     // Row 1
@@ -106,14 +106,14 @@ export const layout = [
     // Row 6
     [
         key("ControlLeft", "Ctrl", 5),
-        key("MetaLeft", "Win", 5), // or like windows symbol
+        key("MetaLeft", "Win", 5),
         key("AltLeft", "Alt", 5),
         key("Space", "", 25, true),
         key("AltRight", "Alt"),
         key("Function", "Fn"),
         key("ControlRight", "Ctrl"),
-        key("ArrowLeft", "🠈", 4, true),
-        key("ArrowDown", "🠋", 4, true),
-        key("ArrowRight", "🠊", 4, true),
+        key("ArrowLeft", "🠈"),
+        key("ArrowDown", "🠋"),
+        key("ArrowRight", "🠊"),
     ]
 ];

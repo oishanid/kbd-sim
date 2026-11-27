@@ -1,3 +1,15 @@
+:root {
+    --keycap-bg: #2c2e35;
+    --keycap-top: #3a3d46;
+    --keycap-text: #f0f0f0;
+    --keycap-wall: #121316;
+
+    --modkey-bg: #3f6ea8;
+    --modkey-top: #5b8dc9;
+    --modkey-text: #ffffff;
+    --modkey-wall: #26466f;
+}
+
 * {
     box-sizing: border-box;
 }
@@ -40,20 +52,43 @@ body {
 }
 
 .keycap {
+    --base: var(--keycap-bg);
+    --top: var(--keycap-top);
+    --wall: var(--keycap-wall);
+
+    position: relative;
+    isolation: isolate;
+
     width: 100%;
     height: 90%;
     display: grid;
     place-items: center;
 
-    background: #2c2e35;
-    color: #f0f0f0;
+    background: var(--base);
+    color: var(--keycap-text);
     font-size: 11px;
-    font-weight: 600px;
+    font-weight: 600;
     border-radius: 7px;
 
     box-shadow:
-        0 4px 0 #121316,
+        0 4px 0 var(--wall),
         0 6px 8px rgba(0, 0, 0, 0.35);
 
     user-select: none;
+}
+
+.keycap::before {
+    content: "";
+    position: absolute;
+    inset: 4px 5px 8px 5px;
+    border-radius: 5px;
+    background: linear-gradient(to bottom, var(--top), var(--base));
+    z-index: -1;
+}
+
+.keycap.modkey {
+    --base: var(--modkey-bg);
+    --top: var(--modkey-top);
+    --wall: var(--modkey-wall);
+    color: var(--modkey-text);
 }
