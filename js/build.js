@@ -12,7 +12,7 @@ export function buildKeyboard(layout, container) {
                 gapDiv.classList.add("gap");
                 gapDiv.style.setProperty("--span", keyData.span);
                 rowDiv.append(gapDiv);
-                continue;
+                continue; // Skip the rest of the loop (since gap div was made already)
             }
 
             const keyDiv = document.createElement("div");

@@ -27,7 +27,7 @@ export const layout = [
         key("F10", "F10"),
         key("F11", "F11"),
         key("F12", "F12"),
-        gap(8),
+        gap(7),
     ],
     // Row 2
     [
