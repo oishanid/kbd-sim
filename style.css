@@ -76,6 +76,15 @@ body {
         0 6px 8px rgba(0, 0, 0, 0.35);
 
     user-select: none;
+    transition: transform 120ms ease-out, box-shadow 120ms ease-out;
+}
+
+.keycap.pressed {
+    transform: translateY(4px);
+    box-shadow:
+        0 0 0 var(-wall),
+        0 2px 3px rgba(0, 0, 0, 0.35);
+    transition: transform 30ms ease-out, box-shadow 30ms ease-out;
 }
 
 .keycap::before {
